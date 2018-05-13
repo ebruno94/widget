@@ -55,7 +55,7 @@ document.getElementById('addContentHere').innerHTML +=
     margin-bottom: 0px;
   }
 
-  .btn{
+  .button{
     height: 40px;
     width: 80px;
     background-color:#2f66bf;
@@ -96,6 +96,10 @@ document.getElementById('addContentHere').innerHTML +=
     grid-row-gap: 10px;
   }
 
+  #buttonRow:before{
+    content: none;
+  }
+
   #more{
     height: 40px;
     width: 80px;
@@ -127,7 +131,6 @@ let promise = new Promise(function(resolve, reject){
 promise.then(function(response){
   let body = JSON.parse(response);
   let buttonRow = document.getElementById('buttonRow');
-  // Set 11 to desired amount if more buttons wanted
   for (let i = 0; i < 11; i++){
     let hour = new Date(body.scheduleDays[0].timeSlots[i].slotDateTime).getHours();
     let mins = new Date(body.scheduleDays[0].timeSlots[i].slotDateTime).getMinutes().toString();
@@ -141,7 +144,7 @@ promise.then(function(response){
     } else {
       ampm = 'a';
     }
-    buttonRow.innerHTML += `<div><button class='btn' onclick='window.location.href="www.wheelhousetesting.net"'>${hour}:${mins}${ampm}</button></div>`;
+    buttonRow.innerHTML += `<div><button class='button' onclick='window.location.href="www.wheelhousetesting.net"'>${hour}:${mins}${ampm}</button></div>`;
   }
   buttonRow.innerHTML += `<div><button id='more' onclick='window.location.href="www.wheelhousetesting.net"'>More</button></div>`
 })
