@@ -144,7 +144,7 @@ promise.then(function(response){
     } else {
       ampm = 'a';
     }
-    buttonRow.innerHTML += `<div><button class='button' onclick='window.location.href="www.wheelhousetesting.net"'>${hour}:${mins}${ampm}</button></div>`;
+    buttonRow.innerHTML += `<div><button class='button' onclick='window.location.href="http://www.wheelhousetesting.net"'>${hour}:${mins}${ampm}</button></div>`;
   }
-  buttonRow.innerHTML += `<div><button id='more' onclick='window.location.href="www.wheelhousetesting.net"'>More</button></div>`
+  buttonRow.innerHTML += `<div><button id='more' onclick='window.location.href="http://www.wheelhousetesting.net"'>More</button></div>`
 })
